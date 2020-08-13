@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D07DECFA-2F37-480C-971C-19C444926E33}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>biometric_election_system</RootNamespace>
+    <AssemblyName>biometric_election_system</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElectionSystemDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ElectionSystemDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ElectionSystemDummyDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ElectionSystemDummyDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FingerPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FingerPrint.Designer.cs">
+      <DependentUpon>FingerPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOME.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOME.Designer.cs">
+      <DependentUpon>HOME.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NadraInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NadraInsert.Designer.cs">
+      <DependentUpon>NadraInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User_panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User_panel.Designer.cs">
+      <DependentUpon>User_panel.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FingerPrint.resx">
+      <DependentUpon>FingerPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOME.resx">
+      <DependentUpon>HOME.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NadraInsert.resx">
+      <DependentUpon>NadraInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="User_panel.resx">
+      <DependentUpon>User_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ElectionSystemDataSet.xsc">
+      <DependentUpon>ElectionSystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ElectionSystemDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ElectionSystemDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ElectionSystemDataSet.xss">
+      <DependentUpon>ElectionSystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ElectionSystemDummyDataSet.xsc">
+      <DependentUpon>ElectionSystemDummyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ElectionSystemDummyDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ElectionSystemDummyDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ElectionSystemDummyDataSet.xss">
+      <DependentUpon>ElectionSystemDummyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\1200px-State_emblem_of_Pakistan.svg.png" />
+    <Content Include="images\441984_22729308.jpg" />
+    <Content Include="images\62194-coversharjpg-1515223964-138-640x480.jpg" />
+    <Content Include="images\big_280_second-leadr.gif" />
+    <Content Include="images\De3FwfYX4AIVL1Q.jpg" />
+    <Content Include="images\e-Voting.jpg" />
+    <Content Include="images\Election-Result-Update-artwork.gif" />
+    <Content Include="images\elections.jpg" />
+    <Content Include="images\Emblem_of_the_Election_Commission_of_Pakistan.svg.png" />
+    <Content Include="images\Go-Vote-for-Pakistan.jpg" />
+    <Content Include="images\icons8_Ballot_50px.png" />
+    <Content Include="images\icons8_Combo_Chart_52px.png" />
+    <Content Include="images\icons8_Delete_64px.png" />
+    <Content Include="images\icons8_Donald_Trump_50px.png" />
+    <Content Include="images\icons8_Elections_50px.png" />
+    <Content Include="images\icons8_Menu_64px.png" />
+    <Content Include="images\icons8_User_48px.png" />
+    <Content Include="images\icons8_User_Groups_50px.png" />
+    <Content Include="images\images.jpg" />
+    <Content Include="images\pakistan-06.jpg" />
+    <Content Include="images\pakvoter-civic-information-portal.png" />
+    <Content Include="images\Screenshot_2.png" />
+    <None Include="Resources\Nad1.png" />
+    <None Include="Resources\pic_1470766281.jpg" />
+    <None Include="Resources\800px_COLOURBOX4545345.jpg" />
+    <None Include="Resources\MQM%28P%29-kite.png" />
+    <None Include="Resources\TLP-crane.png" />
+    <None Include="Resources\PPPP.png" />
+    <None Include="Resources\Arrow_PPP_symbol.png" />
+    <None Include="Resources\MMP-book.png" />
+    <None Include="Resources\PMLN.png" />
+    <None Include="Resources\PTi2.png" />
+    <None Include="Resources\PTI.png" />
+    <None Include="Resources\loginloho.png" />
+    <None Include="Resources\registerlogo.png" />
+    <None Include="Resources\registerlogo1.jpg" />
+    <None Include="Resources\registerlogo.jpg" />
+    <None Include="Resources\loginloho.jpg" />
+    <None Include="Resources\pakistanmap.jpg" />
+    <None Include="Resources\Election-Commission-of-Pakistan.png" />
+    <None Include="Resources\Untitled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="fingerprints\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

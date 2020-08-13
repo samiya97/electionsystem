@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ElectionSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ElectionSystem.dbo.Nad' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Nad">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Full_name" Type="varchar" MaxLength="50" />
+    <Property Name="Father_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Identity_Number" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" />
+    <Property Name="Permanent_address" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Full name" Type="varchar" MaxLength="255" />
+    <Property Name="Identity Number" Type="varchar" MaxLength="15" />
+    <Property Name="Email" Type="varchar" MaxLength="255" />
+    <Property Name="Password" Type="varchar" MaxLength="255" />
+    <Property Name="Country" Type="varchar" MaxLength="100" />
+    <Property Name="Fingerprint" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="ElectionSystemModelStoreContainer">
+    <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nad" EntityType="Self.Nad" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Nad].[ID] AS [ID], 
+    [Nad].[Full_name] AS [Full_name], 
+    [Nad].[Father_Name] AS [Father_Name], 
+    [Nad].[Identity_Number] AS [Identity_Number], 
+    [Nad].[Address] AS [Address], 
+    [Nad].[DOB] AS [DOB], 
+    [Nad].[Gender] AS [Gender], 
+    [Nad].[Permanent_address] AS [Permanent_address], 
+    [Nad].[City] AS [City]
+    FROM [dbo].[Nad] AS [Nad]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
